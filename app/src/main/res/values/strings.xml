@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Portfolio</string>
+    <string name="dummytext">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Non enim praesent elementum facilisis leo vel fringilla est..</string>
+    <string name="text">"Welcome! This is my Portfolio app.This contains all information about me and the links to my social media handles"</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="yes_message">APP: Thanks</string>
+    <string name="no_message">APP: Okay</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
