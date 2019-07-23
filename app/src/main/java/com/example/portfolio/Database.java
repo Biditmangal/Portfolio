@@ -9,7 +9,7 @@ import android.content.ContentValues;
 
 public class Database extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
-    private static final String DATABASE_NAME = "user.db";
+    private static final String DATABASE_NAME = "user";
     private static final String TABLE_NAME = "User";
     private static final String COLUMN_EMAIL = "Email";
     private static final String COLUMN_NAME = "Name";
@@ -26,6 +26,8 @@ public class Database extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int i, int i1) {
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_NAME);
+        onCreate(db);
     }
 
     public String loadHandler() {
@@ -50,10 +52,14 @@ public class Database extends SQLiteOpenHelper {
     public void addHandler(Username user){
 
         SQLiteDatabase db = this.getWritableDatabase();
+
         ContentValues values = new ContentValues();
+
         values.put(COLUMN_EMAIL, user.getEmail());
         values.put(COLUMN_NAME, user.getName());
+
         db.insert(TABLE_NAME, null, values);
+
         db.close();
     }
 }
